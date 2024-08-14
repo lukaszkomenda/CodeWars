@@ -27,5 +27,63 @@ public class CodeWarsImpl implements CodeWars {
 
         return true;
     }
+
+    @Override
+    public String whatCentury(int year) {
+        if (year % 100 == 0) {
+            year /= 100;
+        } else {
+            year = (year / 100) + 1;
+        }
+        String[] suffixes = {"th", "st", "nd", "rd", "th", "th",
+                "th", "th", "th", "th"};
+
+        switch (year % 100) {
+            case 11:
+            case 12:
+            case 13:
+                return year + "th";
+            default:
+                return year + suffixes[year % 10];
+        }
+    }
+
+    @Override
+    public String dnaToRna(String dna) {
+        if (dna == null){
+            return null;
+        } else {
+            char[] signArray = dna
+                    .toUpperCase()
+                    .toCharArray();
+
+            StringBuilder dnaBuilder = new StringBuilder();
+            for (char c : signArray) {
+                if (c == 'G' || c == 'C' || c == 'A') {
+                    dnaBuilder.append(c);
+                } else if (c == 'T') {
+                    dnaBuilder.append('U');
+                }
+            }
+            dna = dnaBuilder.toString();
+        }
+
+        return dna;
+    }
+
+    @Override
+    public int arrayPlusArray(int[] arr1, int[] arr2) {
+        int counter = 0;
+
+        for (int j : arr1) {
+            counter += j;
+        }
+
+        for (int j : arr2) {
+            counter += j;
+        }
+
+        return counter;
+    }
 }
 
