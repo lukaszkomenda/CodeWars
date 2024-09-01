@@ -85,5 +85,68 @@ public class CodeWarsImpl implements CodeWars {
 
         return counter;
     }
+
+    @Override
+    public int doubleInteger(int i) {
+        return i * 2;
+    }
+
+    @Override
+    public boolean xor(boolean a, boolean b) {
+
+        if (a && !b){
+            return true;
+        } else return !a && b;
+    }
+
+    @Override
+    public int stantonMeasure(int[] arr) {
+        int oneCounter = 0;
+        int statCounter = 0;
+
+        for (int k : arr) {
+            if (k == 1) {
+                oneCounter++;
+            }
+        }
+
+        for (int j : arr) {
+            if (j == oneCounter) {
+                statCounter++;
+            }
+        }
+
+        return statCounter;
+    }
+
+    @Override
+    public String daysInTheYear(int year) {
+        int num;
+
+        if (year % 4 != 0){
+            num = 365;
+        } else if (year % 400 == 0){
+            num = 366;
+        } else if (year % 100 == 0) {
+            num = 365;
+        } else {
+            num = 366;
+        }
+
+        return year + " has " + num + " days";
+    }
+
+    @Override
+    public int[] multiples(int m, int n) {
+        int multipier = 1;
+        int[] array = new int[m];
+
+        for (int i = 0; i < m; i++) {
+            array[i] = multipier * n;
+            multipier++;
+        }
+
+        return array;
+    }
 }
 
