@@ -150,4 +150,48 @@ class CodeWarsImplTest {
         assertEquals(3, array.length);
     }
 
+    @Test
+    void findSmallestIntTest(){
+        //given
+        int[] arr = {78,56,232,12,11,43};
+        int[] arr1 = {0,Integer.MIN_VALUE,Integer.MAX_VALUE};
+        int[] arr2 = {78,56,-2,12,8,-33};
+        //when
+        int smallestInt = codeWars.findSmallestInt(arr);
+        int smallestInt1 = codeWars.findSmallestInt(arr1);
+        int smallestInt2 = codeWars.findSmallestInt(arr2);
+        //then
+        assertEquals(11, smallestInt);
+        assertEquals(Integer.MIN_VALUE, smallestInt1);
+        assertEquals(-33, smallestInt2);
+    }
+
+    @Test
+    void boolToWord(){
+        //given
+        boolean b = true;
+        boolean c = false;
+        //when
+        String word = codeWars.boolToWord(b);
+        String word1 = codeWars.boolToWord(c);
+        //then
+        assertEquals("Yes", word);
+        assertEquals("No", word1);
+    }
+
+    @Test
+    void graderTest(){
+        //given
+        double score1 = 0.7;
+        double score2 = 0.9;
+        double score3 = 0.6;
+        double score4 = 1.1;
+        //when
+        //then
+        assertEquals("C", codeWars.grader(score1));
+        assertEquals("A", codeWars.grader(score2));
+        assertEquals("D", codeWars.grader(score3));
+        assertEquals("F", codeWars.grader(score4));
+    }
+
 }

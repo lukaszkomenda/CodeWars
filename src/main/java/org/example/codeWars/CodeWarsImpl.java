@@ -1,5 +1,7 @@
 package org.example.codeWars;
 
+
+
 public class CodeWarsImpl implements CodeWars {
     @Override
     public boolean checkPangram(String sentence) {
@@ -148,5 +150,47 @@ public class CodeWarsImpl implements CodeWars {
 
         return array;
     }
+
+    @Override
+    public int findSmallestInt(int[] args) {
+        int num = args[0];
+
+        for (int arg : args) {
+            if (num >= arg) {
+                num = arg;
+            }
+        }
+
+        return num;
+    }
+
+    @Override
+    public String boolToWord(boolean b) {
+        if (b){
+            return "Yes";
+        } else {
+            return "No";
+        }
+    }
+
+    @Override
+    public String grader(double score) {
+
+        if (score > 1 || score < 0.6){
+            return "F";
+        } else if (score >= 0.9) {
+            return "A";
+        } else if (score >= 0.8) {
+            return "B";
+        } else if (score >= 0.7) {
+            return "C";
+        } else if (score >= 0.6) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
+
+
 }
 

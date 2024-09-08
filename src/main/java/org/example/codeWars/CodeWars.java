@@ -15,4 +15,7 @@ public interface CodeWars {
     int stantonMeasure(int[] arr);
     String daysInTheYear(int year);
     int[] multiples(int m, int n);
+    int findSmallestInt(int[] args);
+    String boolToWord(boolean b);
+    String grader(double score);
 }
