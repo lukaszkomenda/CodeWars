@@ -151,11 +151,11 @@ class CodeWarsImplTest {
     }
 
     @Test
-    void findSmallestIntTest(){
+    void findSmallestIntTest() {
         //given
-        int[] arr = {78,56,232,12,11,43};
-        int[] arr1 = {0,Integer.MIN_VALUE,Integer.MAX_VALUE};
-        int[] arr2 = {78,56,-2,12,8,-33};
+        int[] arr = {78, 56, 232, 12, 11, 43};
+        int[] arr1 = {0, Integer.MIN_VALUE, Integer.MAX_VALUE};
+        int[] arr2 = {78, 56, -2, 12, 8, -33};
         //when
         int smallestInt = codeWars.findSmallestInt(arr);
         int smallestInt1 = codeWars.findSmallestInt(arr1);
@@ -167,7 +167,7 @@ class CodeWarsImplTest {
     }
 
     @Test
-    void boolToWord(){
+    void boolToWord() {
         //given
         boolean b = true;
         boolean c = false;
@@ -180,7 +180,7 @@ class CodeWarsImplTest {
     }
 
     @Test
-    void graderTest(){
+    void graderTest() {
         //given
         double score1 = 0.7;
         double score2 = 0.9;
@@ -192,6 +192,127 @@ class CodeWarsImplTest {
         assertEquals("A", codeWars.grader(score2));
         assertEquals("D", codeWars.grader(score3));
         assertEquals("F", codeWars.grader(score4));
+    }
+
+    @Test
+    void litersTest() {
+        //given
+        double num = 2;
+        double num1 = 0.97;
+        double num2 = 14.64;
+        double num3 = 1600.2;
+        double num4 = 80;
+        //when
+        int liters = codeWars.liters(num);
+        int liters1 = codeWars.liters(num1);
+        int liters2 = codeWars.liters(num2);
+        int liters3 = codeWars.liters(num3);
+        int liters4 = codeWars.liters(num4);
+        //then
+        assertEquals(1, liters);
+        assertEquals(0, liters1);
+        assertEquals(7, liters2);
+        assertEquals(800, liters3);
+        assertEquals(40, liters4);
+    }
+
+    @Test
+    void divisibleByTest() {
+        //given
+        int[] array = {1, 2, 3, 4, 5, 6};
+        int d = 2;
+
+        int[] array1 = {1, 2, 3, 4, 5, 6};
+        int d1 = 3;
+
+        int[] array2 = {0, 1, 2, 3, 4, 5, 6};
+        int d2 = 4;
+        //when
+        int[] newArray = codeWars.divisibleBy(array, d);
+        int[] newArray1 = codeWars.divisibleBy(array1, d1);
+        int[] newArray2 = codeWars.divisibleBy(array2, d2);
+        //then
+        assertArrayEquals(new int[]{2, 4, 6}, newArray);
+        assertArrayEquals(new int[]{3, 6}, newArray1);
+        assertArrayEquals(new int[]{0, 4}, newArray2);
+    }
+
+    @Test
+    void bmiTest() {
+        //given
+        double weight = 80;
+        double height = 1.8;
+        //when
+        String result = codeWars.bmi(weight, height);
+        //then
+        assertEquals("Normal", result);
+    }
+
+    @Test
+    void basicMathTest() {
+        //given
+        String op = "+";
+        int v1 = 4;
+        int v2 = 7;
+
+        String op1 = "-";
+        int v3 = 15;
+        int v4 = 18;
+
+        String op2 = "*";
+        int v5 = 5;
+        int v6 = 5;
+
+        String op3 = "/";
+        int v7 = 49;
+        int v8 = 7;
+        //when
+        Integer result = codeWars.basicMath(op, v1, v2);
+        Integer result1 = codeWars.basicMath(op1, v3, v4);
+        Integer result2 = codeWars.basicMath(op2, v5, v6);
+        Integer result3 = codeWars.basicMath(op3, v7, v8);
+        //then
+        assertEquals(11, result);
+        assertEquals(-3, result1);
+        assertEquals(25, result2);
+        assertEquals(7, result3);
+    }
+
+    @Test
+    void zeroFuelTest() {
+        //given
+        double dTP = 50;
+        double mpg = 25;
+        double fL = 2;
+
+        double dTP1 = 100;
+        double mpg1 = 50;
+        double fL1 = 1;
+        //when
+        boolean isLoaded = codeWars.zeroFuel(dTP, mpg, fL);
+        boolean isLoaded1 = codeWars.zeroFuel(dTP1, mpg1, fL1);
+        //then
+        assertTrue(isLoaded);
+        assertFalse(isLoaded1);
+    }
+
+    @Test
+    void getVolumeOfCuboidTest() {
+        //given
+        double length = 1;
+        double width = 2;
+        double height = 2;
+
+        double length1 = 6.3;
+        double width1 = 2;
+        double height1 = 5;
+
+        //when
+        double result = codeWars.getVolumeOfCuboid(length, width, height);
+        double result1 = codeWars.getVolumeOfCuboid(length1, width1, height1);
+        //then
+        assertEquals(4, result);
+        assertEquals(63, result1);
     }
 
 }

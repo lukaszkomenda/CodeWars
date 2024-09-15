@@ -1,6 +1,7 @@
 package org.example.codeWars;
 
 
+import java.util.Objects;
 
 public class CodeWarsImpl implements CodeWars {
     @Override
@@ -52,7 +53,7 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public String dnaToRna(String dna) {
-        if (dna == null){
+        if (dna == null) {
             return null;
         } else {
             char[] signArray = dna
@@ -96,7 +97,7 @@ public class CodeWarsImpl implements CodeWars {
     @Override
     public boolean xor(boolean a, boolean b) {
 
-        if (a && !b){
+        if (a && !b) {
             return true;
         } else return !a && b;
     }
@@ -125,9 +126,9 @@ public class CodeWarsImpl implements CodeWars {
     public String daysInTheYear(int year) {
         int num;
 
-        if (year % 4 != 0){
+        if (year % 4 != 0) {
             num = 365;
-        } else if (year % 400 == 0){
+        } else if (year % 400 == 0) {
             num = 366;
         } else if (year % 100 == 0) {
             num = 365;
@@ -166,7 +167,7 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public String boolToWord(boolean b) {
-        if (b){
+        if (b) {
             return "Yes";
         } else {
             return "No";
@@ -176,7 +177,7 @@ public class CodeWarsImpl implements CodeWars {
     @Override
     public String grader(double score) {
 
-        if (score > 1 || score < 0.6){
+        if (score > 1 || score < 0.6) {
             return "F";
         } else if (score >= 0.9) {
             return "A";
@@ -189,6 +190,76 @@ public class CodeWarsImpl implements CodeWars {
         } else {
             return "F";
         }
+    }
+
+    @Override
+    public int liters(double time) {
+        double need = 0.5;
+
+        return (int) (need * time);
+    }
+
+    @Override
+    public int[] divisibleBy(int[] numbers, int divider) {
+        int counter = 0;
+
+        for (int j : numbers) {
+            if (j % divider == 0) {
+                counter++;
+            }
+        }
+
+        int[] array = new int[counter];
+        int n = 0;
+
+        for (int number : numbers) {
+            if (number % divider == 0) {
+                array[n] = number;
+                n++;
+            }
+        }
+
+        return array;
+    }
+
+    @Override
+    public String bmi(double weight, double height) {
+        double bmiValue = weight / Math.pow(height,2);
+
+        if (bmiValue <= 18.5){
+            return "Underweight";
+        } else if (bmiValue > 18.5 && bmiValue <= 25.0){
+            return "Normal";
+        } else if (bmiValue > 25.0 && bmiValue <= 30.0){
+            return "Overweight";
+        } else {
+            return "Obese";
+        }
+    }
+
+    @Override
+    public Integer basicMath(String op, int v1, int v2) {
+        
+        if (Objects.equals(op, "+")){
+            return v1 + v2;
+        } else if (Objects.equals(op, "-")) {
+            return v1 - v2;
+        } else if (Objects.equals(op, "*")) {
+            return  v1 * v2;
+        } else {
+            return v1 / v2;
+        }
+
+    }
+
+    @Override
+    public boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft) {
+        return distanceToPump <= (mpg * fuelLeft);
+    }
+
+    @Override
+    public double getVolumeOfCuboid(double length, double width, double height) {
+        return length * width * height;
     }
 
 
