@@ -315,4 +315,108 @@ class CodeWarsImplTest {
         assertEquals(63, result1);
     }
 
+    @Test
+    void setAlarmTest() {
+        //given
+        boolean employed = true;
+        boolean vacation = false;
+
+        boolean employed1 = true;
+        boolean vacation1 = true;
+
+        boolean employed2 = false;
+        boolean vacation2 = false;
+
+        boolean employed3 = false;
+        boolean vacation3 = true;
+        //when
+        boolean isAlarmed = codeWars.setAlarm(employed, vacation);
+        boolean isAlarmed1 = codeWars.setAlarm(employed1, vacation1);
+        boolean isAlarmed2 = codeWars.setAlarm(employed2, vacation2);
+        boolean isAlarmed3 = codeWars.setAlarm(employed3, vacation3);
+        //then
+        assertTrue(isAlarmed);
+        assertFalse(isAlarmed1);
+        assertFalse(isAlarmed2);
+        assertFalse(isAlarmed3);
+    }
+
+    @Test
+    void squareSumTest() {
+        //given
+        int[] array = {1, 2, 2};
+        int[] array1 = {1, 2};
+        int[] array2 = {5, -3, 4};
+        int[] array3 = {};
+        //when
+        int result = codeWars.squareSum(array);
+        int result1 = codeWars.squareSum(array1);
+        int result2 = codeWars.squareSum(array2);
+        int result3 = codeWars.squareSum(array3);
+        //then
+        assertEquals(9, result);
+        assertEquals(5, result1);
+        assertEquals(50, result2);
+        assertEquals(0, result3);
+    }
+
+    @Test
+    void spinWordsTest() {
+        //given
+        String sentence = "Welcome";
+        String sentence1 = "Hey fellow warriors";
+        //when
+        String spinWords = codeWars.spinWords(sentence);
+        String spinWords1 = codeWars.spinWords(sentence1);
+        //then
+        assertEquals("emocleW", spinWords);
+        assertEquals("Hey wollef sroirraw", spinWords1);
+    }
+
+    @Test
+    void enoughTest() {
+        //given
+        int cap = 10;
+        int on = 5;
+        int wait = 5;
+
+        int cap1 = 100;
+        int on1 = 60;
+        int wait1 = 50;
+
+        int cap2 = 20;
+        int on2 = 5;
+        int wait2 = 5;
+        //when
+        int result = codeWars.enough(cap, on, wait);
+        int result1 = codeWars.enough(cap1, on1, wait1);
+        int result2 = codeWars.enough(cap2, on2, wait2);
+        //then
+        assertEquals(0, result);
+        assertEquals(10, result1);
+        assertEquals(0, result2);
+    }
+
+    @Test
+    void isEvenTest() {
+        //given
+        double num = 0;
+        double num1 = 0.5;
+        double num2 = 1;
+        double num3 = 2;
+        double num4 = -4;
+        //when
+        boolean isEven = codeWars.isEven(num);
+        boolean isEven1 = codeWars.isEven(num1);
+        boolean isEven2 = codeWars.isEven(num2);
+        boolean isEven3 = codeWars.isEven(num3);
+        boolean isEven4 = codeWars.isEven(num4);
+        //then
+        assertTrue(isEven);
+        assertFalse(isEven1);
+        assertFalse(isEven2);
+        assertTrue(isEven3);
+        assertTrue(isEven4);
+    }
+
 }

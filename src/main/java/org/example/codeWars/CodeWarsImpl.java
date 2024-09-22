@@ -224,13 +224,13 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public String bmi(double weight, double height) {
-        double bmiValue = weight / Math.pow(height,2);
+        double bmiValue = weight / Math.pow(height, 2);
 
-        if (bmiValue <= 18.5){
+        if (bmiValue <= 18.5) {
             return "Underweight";
-        } else if (bmiValue > 18.5 && bmiValue <= 25.0){
+        } else if (bmiValue > 18.5 && bmiValue <= 25.0) {
             return "Normal";
-        } else if (bmiValue > 25.0 && bmiValue <= 30.0){
+        } else if (bmiValue > 25.0 && bmiValue <= 30.0) {
             return "Overweight";
         } else {
             return "Obese";
@@ -239,13 +239,13 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public Integer basicMath(String op, int v1, int v2) {
-        
-        if (Objects.equals(op, "+")){
+
+        if (Objects.equals(op, "+")) {
             return v1 + v2;
         } else if (Objects.equals(op, "-")) {
             return v1 - v2;
         } else if (Objects.equals(op, "*")) {
-            return  v1 * v2;
+            return v1 * v2;
         } else {
             return v1 / v2;
         }
@@ -262,6 +262,73 @@ public class CodeWarsImpl implements CodeWars {
         return length * width * height;
     }
 
+    @Override
+    public boolean setAlarm(boolean employed, boolean vacation) {
+        if (employed && vacation) {
+            return false;
+        } else if (!employed && vacation) {
+            return false;
+        } else return employed;
+    }
+
+    @Override
+    public int squareSum(int[] n) {
+        int sum = 0;
+
+        for (int j : n) {
+            sum += j * j;
+        }
+        return sum;
+    }
+
+    @Override
+    public String spinWords(String sentence) {
+        StringBuilder sentenceReoriented = new StringBuilder();
+
+        String[] array = sentence.split(" ");
+
+        int numberOfCharacters = array[0].length();
+
+        if (array.length == 1 && numberOfCharacters >= 5) {
+            StringBuilder sentenceReverse = new StringBuilder(array[0]);
+            return sentenceReverse.reverse().toString();
+        }
+
+        for (int i = 0; i < array.length; i++) {
+
+            StringBuilder sentenceReverse = new StringBuilder(array[i]);
+            numberOfCharacters = array[i].length();
+
+            if (numberOfCharacters < 5 && i != array.length - 1) {
+                sentenceReoriented.append(array[i]).append(" ");
+            } else if (numberOfCharacters >= 5 && i != array.length - 1) {
+                sentenceReoriented.append(sentenceReverse.reverse()).append(" ");
+            } else if (numberOfCharacters < 5 && i == array.length - 1) {
+                sentenceReoriented.append(array[i]);
+            } else {
+                sentenceReoriented.append(sentenceReverse.reverse());
+            }
+        }
+
+        return sentenceReoriented.toString();
+    }
+
+    @Override
+    public int enough(int cap, int on, int wait) {
+        if (on + wait <= cap){
+            return 0;
+        } else {
+            return on + wait - cap;
+        }
+    }
+
+    @Override
+    public boolean isEven(double n) {
+        return n % 2 == 0;
+    }
 
 }
+
+
+
 

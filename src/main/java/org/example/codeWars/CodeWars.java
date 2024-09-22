@@ -37,4 +37,14 @@ public interface CodeWars {
     boolean zeroFuel(double distanceToPump, double mpg, double fuelLeft);
 
     double getVolumeOfCuboid(final double length, final double width, final double height);
+
+    boolean setAlarm(boolean employed, boolean vacation);
+
+    int squareSum(int[] n);
+
+    String spinWords(String sentence);
+
+    int enough(int cap, int on, int wait);
+
+    boolean isEven(double n);
 }
