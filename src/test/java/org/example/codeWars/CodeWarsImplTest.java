@@ -419,4 +419,70 @@ class CodeWarsImplTest {
         assertTrue(isEven4);
     }
 
+    @Test
+    void vaporCodeTest() {
+        //given
+        String str = "Lets go to the movies";
+        String str1 = "Why isnt my code working";
+        //when
+        String vaporcode = codeWars.vaporCode(str);
+        String vaporcode1 = codeWars.vaporCode(str1);
+        //then
+        assertEquals("L  E  T  S  G  O  T  O  T  H  E  M  O  V  I  E  S", vaporcode);
+        assertEquals("W  H  Y  I  S  N  T  M  Y  C  O  D  E  W  O  R  K  I  N  G", vaporcode1);
+    }
+
+    @Test
+    void capitalizeTest() {
+        //given
+        String s = "abcdef";
+        int[] ind = {1, 2, 5};
+
+        String s1 = "abcdef";
+        int[] ind1 = {1, 2, 5, 100};
+
+        String s2 = "codewars";
+        int[] ind2 = {1, 3, 5, 50};
+
+        String s3 = "abracadabra";
+        int[] ind3 = {2, 6, 9, 10};
+
+        String s4 = "codewarriors";
+        int[] ind4 = {5};
+        //when
+        String capitalize = codeWars.capitalize(s, ind);
+        String capitalize1 = codeWars.capitalize(s1, ind1);
+        String capitalize2 = codeWars.capitalize(s2, ind2);
+        String capitalize3 = codeWars.capitalize(s3, ind3);
+        String capitalize4 = codeWars.capitalize(s4, ind4);
+        //then
+        assertEquals("aBCdeF", capitalize);
+        assertEquals("aBCdeF", capitalize1);
+        assertEquals("cOdEwArs", capitalize2);
+        assertEquals("abRacaDabRA", capitalize3);
+        assertEquals("codewArriors", capitalize4);
+    }
+
+    @Test
+    void abbrevNameTest() {
+        //given
+        String str = "Sam Harris";
+        String str1 = "Patrick Feenan";
+        String str2 = "Evan Cole";
+        String str3 = "P Favuzzi";
+        String str4 = "David Mendieta";
+        //when
+        String newStr = codeWars.abbrevName(str);
+        String newStr1 = codeWars.abbrevName(str1);
+        String newStr2 = codeWars.abbrevName(str2);
+        String newStr3 = codeWars.abbrevName(str3);
+        String newStr4 = codeWars.abbrevName(str4);
+        //then
+        assertEquals("S.H", newStr);
+        assertEquals("P.F", newStr1);
+        assertEquals("E.C", newStr2);
+        assertEquals("P.F", newStr3);
+        assertEquals("D.M", newStr4);
+    }
+
 }

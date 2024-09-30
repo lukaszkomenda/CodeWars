@@ -327,6 +327,41 @@ public class CodeWarsImpl implements CodeWars {
         return n % 2 == 0;
     }
 
+    @Override
+    public String vaporCode(String s) {
+
+        String[] array = s.replaceAll(" ", "")
+                .toUpperCase()
+                .split("");
+        StringBuilder newS = new StringBuilder();
+
+        for (String value : array) {
+            newS.append(value).append("  ");
+        }
+
+        return newS.toString().trim();
+    }
+
+    @Override
+    public String capitalize(String s, int[] ind) {
+
+        char[] array = s.toCharArray();
+
+        for (int j : ind) {
+            if (j <= s.length()) {
+                array[j] = Character.toUpperCase(array[j]);
+            }
+        }
+        return new String(array);
+    }
+
+    @Override
+    public String abbrevName(String name) {
+        int spaceIndex = name.indexOf(" ");
+
+        return name.charAt(0) + "." + name.charAt(spaceIndex + 1);
+    }
+
 }
 
 

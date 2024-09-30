@@ -47,4 +47,10 @@ public interface CodeWars {
     int enough(int cap, int on, int wait);
 
     boolean isEven(double n);
+
+    String vaporCode(String s);
+
+    String capitalize(String s, int[] ind);
+
+    String abbrevName(String name);
 }
