@@ -315,7 +315,7 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public int enough(int cap, int on, int wait) {
-        if (on + wait <= cap){
+        if (on + wait <= cap) {
             return 0;
         } else {
             return on + wait - cap;
@@ -359,7 +359,9 @@ public class CodeWarsImpl implements CodeWars {
     public String abbrevName(String name) {
         int spaceIndex = name.indexOf(" ");
 
-        return name.charAt(0) + "." + name.charAt(spaceIndex + 1);
+        return name.toUpperCase()
+                .charAt(0) + "." + name.toUpperCase()
+                .charAt(spaceIndex + 1);
     }
 
 }
