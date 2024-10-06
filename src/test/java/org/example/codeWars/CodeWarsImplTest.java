@@ -485,4 +485,35 @@ class CodeWarsImplTest {
         assertEquals("D.M", newStr4);
     }
 
+    @Test
+    void TwoDecimalPlacesTest() {
+        //given
+        double number = 4.659725356;
+        double number1 = 173735326.3783732637948948;
+        //when
+        double roundNumber = codeWars.twoDecimalPlaces(number);
+        double roundNumber1 = codeWars.twoDecimalPlaces(number1);
+        //then
+        assertEquals(4.66, roundNumber);
+        assertEquals(173735326.38, roundNumber1);
+    }
+
+    @Test
+    void oddOneTest() {
+        //given
+        int[] array = {2, 4, 6, 7, 10};
+        int[] array1 = {2, 16, 98, 10, 13, 78};
+        int[] array2 = {4, -8, 98, -12, -7, 90, 100};
+        int[] array3 = {2, 4, 6, 8};
+        //when
+        int index = codeWars.oddOne(array);
+        int index1 = codeWars.oddOne(array1);
+        int index2 = codeWars.oddOne(array2);
+        int index3 = codeWars.oddOne(array3);
+        //then
+        assertEquals(3, index);
+        assertEquals(4, index1);
+        assertEquals(4, index2);
+        assertEquals(-1, index3);
+    }
 }

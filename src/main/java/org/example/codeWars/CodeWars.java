@@ -53,4 +53,8 @@ public interface CodeWars {
     String capitalize(String s, int[] ind);
 
     String abbrevName(String name);
+
+    double twoDecimalPlaces(double number);
+
+    int oddOne(int[] arr);
 }

@@ -364,6 +364,27 @@ public class CodeWarsImpl implements CodeWars {
                 .charAt(spaceIndex + 1);
     }
 
+    @Override
+    public double twoDecimalPlaces(double number) {
+
+        long factor = (long) Math.pow(10, 2);
+        number *= factor;
+
+        long tmp = Math.round(number);
+        return (double) tmp / factor;
+    }
+
+    @Override
+    public int oddOne(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
 }
 
 
