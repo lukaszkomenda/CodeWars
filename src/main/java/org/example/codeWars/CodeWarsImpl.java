@@ -377,11 +377,33 @@ public class CodeWarsImpl implements CodeWars {
     @Override
     public int oddOne(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 != 0){
+            if (arr[i] % 2 != 0) {
                 return i;
             }
         }
         return -1;
+    }
+
+    @Override
+    public String areYouPlayingBanjo(String name) {
+
+        if (name.toUpperCase().charAt(0) == 'R') {
+            return name + " plays banjo";
+        }
+
+        return name + " does not play banjo";
+    }
+
+    @Override
+    public String replaceDots(String str) {
+        return str.replaceAll("\\.", "-");
+    }
+
+    @Override
+    public int digits(long n) {
+        String digits = Long.toString(n);
+
+        return digits.length();
     }
 
 

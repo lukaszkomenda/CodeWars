@@ -57,4 +57,10 @@ public interface CodeWars {
     double twoDecimalPlaces(double number);
 
     int oddOne(int[] arr);
+
+    String areYouPlayingBanjo(String name);
+
+    String replaceDots(final String str);
+
+    int digits(long n);
 }

@@ -516,4 +516,49 @@ class CodeWarsImplTest {
         assertEquals(4, index2);
         assertEquals(-1, index3);
     }
+
+    @Test
+    void areYouPlayingBanjoTest() {
+        //given
+        String name = "Martin";
+        String name1 = "Rikke";
+        String name2 = "rolf";
+        String name3 = "bravo";
+        //when
+        String areYouPlayingBanjo = codeWars.areYouPlayingBanjo(name);
+        String areYouPlayingBanjo1 = codeWars.areYouPlayingBanjo(name1);
+        String areYouPlayingBanjo2 = codeWars.areYouPlayingBanjo(name2);
+        String areYouPlayingBanjo3 = codeWars.areYouPlayingBanjo(name3);
+        //then
+        assertEquals("Martin does not play banjo", areYouPlayingBanjo);
+        assertEquals("Rikke plays banjo", areYouPlayingBanjo1);
+        assertEquals("rolf plays banjo", areYouPlayingBanjo2);
+        assertEquals("bravo does not play banjo", areYouPlayingBanjo3);
+    }
+
+    @Test
+    void replaceDotsTest() {
+        //given
+        final String str = "one.two.three";
+        //when
+        String newStr = codeWars.replaceDots(str);
+        //then
+        assertEquals("one-two-three", newStr);
+    }
+
+    @Test
+    void digitsTest() {
+        //given
+        long n = 5L;
+        long n1 = 12345L;
+        long n2 = 9876543210L;
+        //when
+        int countDigits = codeWars.digits(n);
+        int countDigits1 = codeWars.digits(n1);
+        int countDigits2 = codeWars.digits(n2);
+        //then
+        assertEquals(1, countDigits);
+        assertEquals(5, countDigits1);
+        assertEquals(10, countDigits2);
+    }
 }
