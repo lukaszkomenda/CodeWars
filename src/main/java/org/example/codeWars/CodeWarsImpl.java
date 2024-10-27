@@ -406,6 +406,47 @@ public class CodeWarsImpl implements CodeWars {
         return digits.length();
     }
 
+    @Override
+    public String[] capitalize(String s) {
+
+        StringBuilder capOdd = new StringBuilder();
+        StringBuilder capNonOdd = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            String toUpperCase = s.substring(i, i + 1).toUpperCase();
+            String toLowerCase = s.substring(i, i + 1).toLowerCase();
+            if (i % 2 == 0) {
+                capOdd.append(toUpperCase);
+                capNonOdd.append(toLowerCase);
+            } else {
+                capNonOdd.append(toUpperCase);
+                capOdd.append(toLowerCase);
+            }
+        }
+
+        return new String[]{capOdd.toString(), capNonOdd.toString()};
+    }
+
+    @Override
+    public String[] stringToArray(String s) {
+        return s.split(" ");
+    }
+
+    @Override
+    public String countingSheep(int num) {
+
+        StringBuilder sb = new StringBuilder();
+        int counter = 1;
+
+        while (num != 0) {
+            sb.append(counter).append(" sheep...");
+            num--;
+            counter++;
+        }
+
+        return sb.toString();
+    }
+
 
 }
 

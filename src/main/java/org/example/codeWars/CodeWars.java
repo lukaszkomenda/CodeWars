@@ -63,4 +63,10 @@ public interface CodeWars {
     String replaceDots(final String str);
 
     int digits(long n);
+
+    String[] capitalize(String s);
+
+    String[] stringToArray(String s);
+
+    String countingSheep(int num);
 }

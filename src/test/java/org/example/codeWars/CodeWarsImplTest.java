@@ -561,4 +561,65 @@ class CodeWarsImplTest {
         assertEquals(5, countDigits1);
         assertEquals(10, countDigits2);
     }
+
+    @Test
+    void capitalizeArrayTest() {
+        //given
+        String str = "abcdef";
+        String str1 = "codewars";
+        String str2 = "abracadabra";
+        String str3 = "codewarriors";
+        //when
+        String[] strings = codeWars.capitalize(str);
+        String[] strings1 = codeWars.capitalize(str1);
+        String[] strings2 = codeWars.capitalize(str2);
+        String[] strings3 = codeWars.capitalize(str3);
+        //then
+        String[] expectedArray = {"AbCdEf", "aBcDeF"};
+        assertArrayEquals(expectedArray, strings);
+
+        String[] expectedArray1 = {"CoDeWaRs", "cOdEwArS"};
+        assertArrayEquals(expectedArray1, strings1);
+
+        String[] expectedArray2 = {"AbRaCaDaBrA", "aBrAcAdAbRa"};
+        assertArrayEquals(expectedArray2, strings2);
+
+        String[] expectedArray3 = {"CoDeWaRrIoRs", "cOdEwArRiOrS"};
+        assertArrayEquals(expectedArray3, strings3);
+    }
+
+    @Test
+    void stringToArrayTest() {
+        //given
+        String str = "Robin Singh";
+        String str1 = "I love arrays they are my favorite";
+        //when
+        String[] strings = codeWars.stringToArray(str);
+        String[] strings1 = codeWars.stringToArray(str1);
+        //then
+        String[] expectedArray = {"Robin", "Singh"};
+        assertArrayEquals(expectedArray, strings);
+
+        String[] expectedArray1 = {"I", "love", "arrays", "they", "are", "my", "favorite"};
+        assertArrayEquals(expectedArray1, strings1);
+    }
+
+    @Test
+    void countingSheepTest() {
+        //given
+        int num = 0;
+        int num1 = 1;
+        int num2 = 2;
+        int num3 = 3;
+        //when
+        String result = codeWars.countingSheep(num);
+        String result1 = codeWars.countingSheep(num1);
+        String result2 = codeWars.countingSheep(num2);
+        String result3 = codeWars.countingSheep(num3);
+        //then
+        assertEquals("", result);
+        assertEquals("1 sheep...", result1);
+        assertEquals("1 sheep...2 sheep...", result2);
+        assertEquals("1 sheep...2 sheep...3 sheep...", result3);
+    }
 }
