@@ -622,4 +622,90 @@ class CodeWarsImplTest {
         assertEquals("1 sheep...2 sheep...", result2);
         assertEquals("1 sheep...2 sheep...3 sheep...", result3);
     }
+
+    @Test
+    void removeTest() {
+        //given
+        String str = "eloquent";
+        String str1 = "country";
+        String str2 = "person";
+        String str3 = "place";
+        //when
+        String newStr = codeWars.remove(str);
+        String newStr1 = codeWars.remove(str1);
+        String newStr2 = codeWars.remove(str2);
+        String newStr3 = codeWars.remove(str3);
+        //then
+        assertEquals("loquen", newStr);
+        assertEquals("ountr", newStr1);
+        assertEquals("erso", newStr2);
+        assertEquals("lac", newStr3);
+    }
+
+    @Test
+    void oppositeTest() {
+        //given
+        int num = 1;
+        //when
+        int opposite = codeWars.opposite(num);
+        //then
+        assertEquals(-1, opposite);
+    }
+
+    @Test
+    void numberToStringTest() {
+        //given
+        int num = 67;
+        int num1 = 123;
+        int num2 = 999;
+        //when
+        String numberToString = codeWars.numberToString(num);
+        String numberToString1 = codeWars.numberToString(num1);
+        String numberToString2 = codeWars.numberToString(num2);
+        //then
+        assertEquals("67", numberToString);
+        assertEquals("123", numberToString1);
+        assertEquals("999", numberToString2);
+    }
+
+    @Test
+    void reverseStringTest() {
+        //given
+        String str = "world";
+        //when
+        String newStr = codeWars.reverseString(str);
+        //then
+        assertEquals("dlrow", newStr);
+    }
+
+    @Test
+    void makeNegativeTest() {
+        //given
+        int num = 42;
+        //when
+        int newNum = codeWars.makeNegative(num);
+        //then
+        assertEquals(-42, newNum);
+    }
+
+    @Test
+    void powersOfTwoTest() {
+        //given
+        int num = 0;
+        int num1 = 1;
+        int num2 = 4;
+        //when
+        long[] powersOfTwo = codeWars.powersOfTwo(num);
+        long[] powersOfTwo1 = codeWars.powersOfTwo(num1);
+        long[] powersOfTwo2 = codeWars.powersOfTwo(num2);
+        //then
+        long[] expectedArray = {1};
+        assertArrayEquals(expectedArray, powersOfTwo);
+
+        long[] expectedArray1 = {1, 2};
+        assertArrayEquals(expectedArray1, powersOfTwo1);
+
+        long[] expectedArray2 = {1, 2, 4, 8, 16};
+        assertArrayEquals(expectedArray2, powersOfTwo2);
+    }
 }

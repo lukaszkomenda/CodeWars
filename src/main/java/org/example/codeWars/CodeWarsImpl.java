@@ -447,6 +447,45 @@ public class CodeWarsImpl implements CodeWars {
         return sb.toString();
     }
 
+    @Override
+    public String remove(String str) {
+        return str.substring(1, str.length() - 1);
+    }
+
+    @Override
+    public int opposite(int number) {
+        return -number;
+    }
+
+    @Override
+    public String numberToString(int num) {
+        return num + "";
+    }
+
+    @Override
+    public String reverseString(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+
+    @Override
+    public int makeNegative(int x) {
+        if (x > 0){
+            return -x;
+        }
+        return x;
+    }
+
+    @Override
+    public long[] powersOfTwo(int n) {
+        long[] powers = new long[n+1];
+
+        for (int i = 0; i < powers.length; i++) {
+            powers[i] = (long) Math.pow(2, i);
+        }
+
+        return powers;
+    }
+
 
 }
 

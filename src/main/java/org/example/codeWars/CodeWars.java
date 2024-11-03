@@ -69,4 +69,16 @@ public interface CodeWars {
     String[] stringToArray(String s);
 
     String countingSheep(int num);
+
+    String remove(String str);
+
+    int opposite(int number);
+
+    String numberToString(int num);
+
+    String reverseString(String str);
+
+    int makeNegative(final int x);
+
+    long[] powersOfTwo(int n);
 }
