@@ -469,7 +469,7 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public int makeNegative(int x) {
-        if (x > 0){
+        if (x > 0) {
             return -x;
         }
         return x;
@@ -477,13 +477,28 @@ public class CodeWarsImpl implements CodeWars {
 
     @Override
     public long[] powersOfTwo(int n) {
-        long[] powers = new long[n+1];
+        long[] powers = new long[n + 1];
 
         for (int i = 0; i < powers.length; i++) {
             powers[i] = (long) Math.pow(2, i);
         }
 
         return powers;
+    }
+
+    @Override
+    public boolean validatePin(String pin) {
+
+        char[] array = pin.toCharArray();
+
+        for (char c : array) {
+            boolean isDigit = Character.isDigit(c);
+            if (!isDigit) {
+                return false;
+            }
+        }
+
+        return pin.length() >= 4 && pin.length() <= 6;
     }
 
 

@@ -81,4 +81,6 @@ public interface CodeWars {
     int makeNegative(final int x);
 
     long[] powersOfTwo(int n);
+
+    boolean validatePin(String pin);
 }

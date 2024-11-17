@@ -708,4 +708,26 @@ class CodeWarsImplTest {
         long[] expectedArray2 = {1, 2, 4, 8, 16};
         assertArrayEquals(expectedArray2, powersOfTwo2);
     }
+
+    @Test
+    void validatePinTest() {
+        //given
+        String pin = "1";
+        String pin1 = "12";
+        String pin2 = "123";
+        String pin3 = "12345";
+        String pin4 = "-1234";
+        //when
+        boolean isValid = codeWars.validatePin(pin);
+        boolean isValid1 = codeWars.validatePin(pin1);
+        boolean isValid2 = codeWars.validatePin(pin2);
+        boolean isValid3 = codeWars.validatePin(pin3);
+        boolean isValid4 = codeWars.validatePin(pin4);
+        //then
+        assertFalse(isValid);
+        assertFalse(isValid1);
+        assertFalse(isValid2);
+        assertTrue(isValid3);
+        assertFalse(isValid4);
+    }
 }
