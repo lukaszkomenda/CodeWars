@@ -730,4 +730,143 @@ class CodeWarsImplTest {
         assertTrue(isValid3);
         assertFalse(isValid4);
     }
+
+    @Test
+    void countByTest() {
+        //given
+        int x = 1;
+        int n = 10;
+
+        int x1 = 2;
+        int n1 = 5;
+
+        int x2 = 3;
+        int n2 = 7;
+
+        int x3 = 50;
+        int n3 = 5;
+        //when
+        int[] array = codeWars.countBy(x, n);
+        int[] array1 = codeWars.countBy(x1, n1);
+        int[] array2 = codeWars.countBy(x2, n2);
+        int[] array3 = codeWars.countBy(x3, n3);
+        //then
+        int[] expectedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        assertArrayEquals(expectedArray, array);
+
+        int[] expectedArray1 = {2, 4, 6, 8, 10};
+        assertArrayEquals(expectedArray1, array1);
+
+        int[] expectedArray2 = {3, 6, 9, 12, 15, 18, 21};
+        assertArrayEquals(expectedArray2, array2);
+
+        int[] expectedArray3 = {50, 100, 150, 200, 250};
+        assertArrayEquals(expectedArray3, array3);
+    }
+
+    @Test
+    void getCharTest() {
+        //given
+        int c = 55;
+        int c1 = 58;
+        int c2 = 64;
+        //when
+        char codeWarsChar = codeWars.getChar(c);
+        char codeWarsChar1 = codeWars.getChar(c1);
+        char codeWarsChar2 = codeWars.getChar(c2);
+        //then
+        assertEquals('7', codeWarsChar);
+        assertEquals(':', codeWarsChar1);
+        assertEquals('@', codeWarsChar2);
+    }
+
+    @Test
+    void minimumSteps() {
+        //given
+        int[] numbers = {4, 6, 3};
+        int k = 7;
+
+        int[] numbers1 = {10, 9, 9, 8};
+        int k1 = 17;
+
+        int[] numbers2 = {8, 9, 4, 2};
+        int k2 = 23;
+
+        int[] numbers3 = {19, 98, 69, 28, 75, 45, 17, 98, 67};
+        int k3 = 464;
+        //when
+        int result = codeWars.minimumSteps(numbers, k);
+        int result1 = codeWars.minimumSteps(numbers1, k1);
+        int result2 = codeWars.minimumSteps(numbers2, k2);
+        int result3 = codeWars.minimumSteps(numbers3, k3);
+        //then
+        assertEquals(1, result);
+        assertEquals(1, result1);
+        assertEquals(3, result2);
+        assertEquals(12, result3);
+    }
+
+    @Test
+    void findDifferenceTest() {
+        //given
+        int[] first = {3, 2, 5};
+        int[] second = {1, 4, 4};
+
+        int[] first1 = {9, 7, 2};
+        int[] second1 = {5, 2, 2};
+
+        int[] first2 = {11, 2, 5};
+        int[] second2 = {1, 10, 8};
+
+        int[] first3 = {4, 4, 7};
+        int[] second3 = {3, 9, 3};
+
+        int[] first4 = {15, 20, 25};
+        int[] second4 = {10, 30, 25};
+        //when
+        int result = codeWars.findDifference(first, second);
+        int result1 = codeWars.findDifference(first1, second1);
+        int result2 = codeWars.findDifference(first2, second2);
+        int result3 = codeWars.findDifference(first3, second3);
+        int result4 = codeWars.findDifference(first4, second4);
+        //then
+        assertEquals(14, result);
+        assertEquals(106, result1);
+        assertEquals(30, result2);
+        assertEquals(31, result3);
+        assertEquals(0, result4);
+
+    }
+
+    @Test
+    void digitizeTest() {
+        //given
+        int num = 123;
+        int num1 = 1;
+        int num2 = 0;
+        int num3 = 1230;
+        int num4 = 8675309;
+        //when
+        int[] digits = codeWars.digitize(num);
+        int[] digits1 = codeWars.digitize(num1);
+        int[] digits2 = codeWars.digitize(num2);
+        int[] digits3 = codeWars.digitize(num3);
+        int[] digits4 = codeWars.digitize(num4);
+        //then
+        int[] expectedArray = {1, 2, 3};
+        assertArrayEquals(expectedArray, digits);
+
+        int[] expectedArray1 = {1};
+        assertArrayEquals(expectedArray1, digits1);
+
+        int[] expectedArray2 = {0};
+        assertArrayEquals(expectedArray2, digits2);
+
+        int[] expectedArray3 = {1, 2, 3, 0};
+        assertArrayEquals(expectedArray3, digits3);
+
+        int[] expectedArray4 = {8, 6, 7, 5, 3, 0, 9};
+        assertArrayEquals(expectedArray4, digits4);
+    }
+
 }

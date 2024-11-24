@@ -83,4 +83,14 @@ public interface CodeWars {
     long[] powersOfTwo(int n);
 
     boolean validatePin(String pin);
+
+    int[] countBy(int x, int n);
+
+    char getChar(int c);
+
+    int minimumSteps(int[] numbers, int k);
+
+    int findDifference(final int[] firstCuboid, final int[] secondCuboid);
+
+    int[] digitize(int n);
 }

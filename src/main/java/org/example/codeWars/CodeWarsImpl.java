@@ -1,6 +1,7 @@
 package org.example.codeWars;
 
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class CodeWarsImpl implements CodeWars {
@@ -499,6 +500,78 @@ public class CodeWarsImpl implements CodeWars {
         }
 
         return pin.length() >= 4 && pin.length() <= 6;
+    }
+
+    @Override
+    public int[] countBy(int x, int n) {
+
+        int[] array = new int[n];
+        array[0] = x;
+
+        for (int i = 1; i < array.length; i++) {
+            array[i] = array[i - 1] + x;
+        }
+
+        return array;
+    }
+
+    @Override
+    public char getChar(int c) {
+        return (char) c;
+    }
+
+    @Override
+    public int minimumSteps(int[] numbers, int k) {
+
+        Arrays.sort(numbers);
+
+        int minA = numbers[0];
+        int minB = numbers[1];
+        int counter = 0;
+        int sum = minA + minB;
+
+        do {
+            counter++;
+            sum += minA + minB;
+        } while (sum < k);
+
+        return counter;
+    }
+
+    @Override
+    public int findDifference(int[] firstCuboid, int[] secondCuboid) {
+
+        int volume1 = 1;
+        int volume2 = 1;
+
+        for (int k : firstCuboid) {
+            volume1 *= k;
+        }
+
+        for (int j : secondCuboid) {
+            volume2 *= j;
+        }
+
+        if (volume1 > volume2) {
+            return volume1 - volume2;
+        } else if (volume2 > volume1) {
+            return volume2 - volume1;
+        }
+
+        return 0;
+    }
+
+    @Override
+    public int[] digitize(int n) {
+
+        String str = String.valueOf(n);
+        int[] digits = new int[str.length()];
+
+        for (int i = 0; i < str.length(); i++) {
+            digits[i] = Character.digit(str.charAt(i), 10);
+        }
+
+        return digits;
     }
 
 
