@@ -3,6 +3,8 @@ package org.example.codeWars;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 public class CodeWarsImpl implements CodeWars {
     @Override
@@ -572,6 +574,70 @@ public class CodeWarsImpl implements CodeWars {
         }
 
         return digits;
+    }
+
+    @Override
+    public long factorial(int n) {
+        long fact = 1;
+
+        for (int i = 2; i <= n; i++) {
+            fact *= i;
+        }
+
+        return fact;
+    }
+
+    @Override
+    public long factorialStream(int n) {
+        return LongStream.rangeClosed(1, n)
+                .reduce(1, (long x, long y) -> x * y);
+    }
+
+    @Override
+    public boolean isAscOrder(int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean isAscOrderIntStream(int[] arr) {
+        return IntStream.range(0, arr.length - 1).noneMatch(i -> arr[i] > arr[i + 1]);
+    }
+
+    @Override
+    public String longestWord(String wordString) {
+
+        String[] words = wordString.split(" ");
+        String max = "";
+
+        for (int i = words.length - 1; i > 0; i--) {
+            if (words[i].length() > max.length()) {
+                max = words[i];
+            }
+        }
+
+        return max;
+    }
+
+    @Override
+    public int sumOfAngles(int n) {
+        return (n - 2) * 180;
+    }
+
+    @Override
+    public int century(int number) {
+        if (number % 100 == 0){
+            number /= 100;
+        } else {
+            number = (number / 100) + 1;
+        }
+
+        return number;
     }
 
 

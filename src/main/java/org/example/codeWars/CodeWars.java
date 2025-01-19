@@ -93,4 +93,18 @@ public interface CodeWars {
     int findDifference(final int[] firstCuboid, final int[] secondCuboid);
 
     int[] digitize(int n);
+
+    long factorial(int n);
+
+    long factorialStream(int n);
+
+    boolean isAscOrder(int[] arr);
+
+    boolean isAscOrderIntStream(int[] arr);
+
+    String longestWord(String wordString);
+
+    int sumOfAngles(int n);
+
+    int century(int number);
 }

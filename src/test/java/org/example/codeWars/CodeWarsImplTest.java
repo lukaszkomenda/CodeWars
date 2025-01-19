@@ -869,4 +869,122 @@ class CodeWarsImplTest {
         assertArrayEquals(expectedArray4, digits4);
     }
 
+    @Test
+    void factorialTest() {
+        //given
+        int n = 0;
+        int n1 = 1;
+        int n2 = 4;
+        int n3 = 7;
+        //when
+        long result = codeWars.factorial(n);
+        long result1 = codeWars.factorial(n1);
+        long result2 = codeWars.factorial(n2);
+        long result3 = codeWars.factorial(n3);
+
+        long result4 = codeWars.factorialStream(n);
+        long result5 = codeWars.factorialStream(n1);
+        long result6 = codeWars.factorialStream(n2);
+        long result7 = codeWars.factorialStream(n3);
+        //then
+        assertEquals(1L, result);
+        assertEquals(1L, result1);
+        assertEquals(24L, result2);
+        assertEquals(5040L, result3);
+
+        assertEquals(1L, result4);
+        assertEquals(1L, result5);
+        assertEquals(24L, result6);
+        assertEquals(5040L, result7);
+    }
+
+    @Test
+    void isAscOrderTest() {
+        //given
+        int[] array = {1, 2, 3};
+        int[] array1 = {1, 3, 2};
+        int[] array2 = {1, 4, 13, 97, 508, 1047, 20058};
+        int[] array3 = {56, 98, 123, 67, 742, 1024, 32, 90969};
+        int[] array4 = {1, 4, 13, 97, 508, 1047, 20058};
+        int[] array5 = {56, 98, 123, 67, 742, 1024, 32, 90969};
+        //when
+        boolean isAscOrder = codeWars.isAscOrder(array);
+        boolean isAscOrder1 = codeWars.isAscOrder(array1);
+        boolean isAscOrder2 = codeWars.isAscOrder(array2);
+        boolean isAscOrder3 = codeWars.isAscOrder(array3);
+        boolean isAscOrder4 = codeWars.isAscOrder(array4);
+        boolean isAscOrder5 = codeWars.isAscOrder(array5);
+
+        boolean isAscOrder6 = codeWars.isAscOrderIntStream(array);
+        boolean isAscOrder7 = codeWars.isAscOrderIntStream(array1);
+        boolean isAscOrder8 = codeWars.isAscOrderIntStream(array2);
+        boolean isAscOrder9 = codeWars.isAscOrderIntStream(array3);
+        boolean isAscOrder10 = codeWars.isAscOrderIntStream(array4);
+        boolean isAscOrder11 = codeWars.isAscOrderIntStream(array5);
+        //then
+        assertTrue(isAscOrder);
+        assertFalse(isAscOrder1);
+        assertTrue(isAscOrder2);
+        assertFalse(isAscOrder3);
+        assertTrue(isAscOrder4);
+        assertFalse(isAscOrder5);
+
+        assertTrue(isAscOrder6);
+        assertFalse(isAscOrder7);
+        assertTrue(isAscOrder8);
+        assertFalse(isAscOrder9);
+        assertTrue(isAscOrder10);
+        assertFalse(isAscOrder11);
+    }
+
+    @Test
+    void longestWordTest() {
+        //given
+        String str = "a b c d e fgh";
+        String str1 = "one two three";
+        String str2 = "red blue grey";
+        //when
+        String newStr = codeWars.longestWord(str);
+        String newStr1 = codeWars.longestWord(str1);
+        String newStr2 = codeWars.longestWord(str2);
+        //then
+        assertEquals("fgh", newStr);
+        assertEquals("three", newStr1);
+        assertEquals("grey", newStr2);
+    }
+
+    @Test
+    void sumOfAnglesTest() {
+        //given
+        int num = 3;
+        int num1 = 4;
+        //when
+        int result = codeWars.sumOfAngles(num);
+        int result1 = codeWars.sumOfAngles(num1);
+        //then
+        assertEquals(180, result);
+        assertEquals(360, result1);
+    }
+
+    @Test
+    void centuryTest() {
+        //given
+        int year = 1705;
+        int year1 = 1900;
+        int year2 = 1601;
+        int year3 = 2000;
+        int year4 = 89;
+        //when
+        int century = codeWars.century(year);
+        int century1 = codeWars.century(year1);
+        int century2 = codeWars.century(year2);
+        int century3 = codeWars.century(year3);
+        int century4 = codeWars.century(year4);
+        //then
+        assertEquals(18, century);
+        assertEquals(19, century1);
+        assertEquals(17, century2);
+        assertEquals(20, century3);
+        assertEquals(1, century4);
+    }
 }
