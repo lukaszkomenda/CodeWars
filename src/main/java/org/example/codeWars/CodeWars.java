@@ -1,5 +1,6 @@
 package org.example.codeWars;
 
+
 public interface CodeWars {
 
     boolean checkPangram(String sentence);
@@ -107,4 +108,6 @@ public interface CodeWars {
     int sumOfAngles(int n);
 
     int century(int number);
+
+    int countBits(int n);
 }

@@ -2,6 +2,7 @@ package org.example.codeWars;
 
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CodeWarsImplTest {
@@ -986,5 +987,27 @@ class CodeWarsImplTest {
         assertEquals(17, century2);
         assertEquals(20, century3);
         assertEquals(1, century4);
+    }
+
+    @Test
+    void countBitsTest() {
+        //given
+        int n = 1234;
+        int n1 = 4;
+        int n2 = 7;
+        int n3 = 9;
+        int n4 = 10;
+        //when
+        int binary = codeWars.countBits(n);
+        int binary1 = codeWars.countBits(n1);
+        int binary2 = codeWars.countBits(n2);
+        int binary3 = codeWars.countBits(n3);
+        int binary4 = codeWars.countBits(n4);
+        //then
+        assertEquals(5, binary);
+        assertEquals(1, binary1);
+        assertEquals(3, binary2);
+        assertEquals(2, binary3);
+        assertEquals(2, binary4);
     }
 }

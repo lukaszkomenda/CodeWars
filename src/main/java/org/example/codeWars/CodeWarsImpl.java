@@ -640,6 +640,11 @@ public class CodeWarsImpl implements CodeWars {
         return number;
     }
 
+    @Override
+    public int countBits(int n) {
+        return Integer.bitCount(n);
+    }
+
 
 }
 
